@@ -1,0 +1,227 @@
+/* Estilos Globais e da Aplicação Principal */
+.App {
+    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-image: url(/public/Banner.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+section {
+    padding: 40px 20px;
+    margin: 20px 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+section p, section li {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left; 
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Listas */
+section ol, section ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+section ol li, section ul li {
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #ff9800; 
+}
+
+section ul li {
+    border-left: 5px solid #4CAF50; 
+    background: #e8f5e9;
+}
+
+section ol li strong, section ul li strong {
+    color: #333;
+}
+
+
+section#cta {
+    background-color: #e8f5e9; 
+    font-weight: bold;
+}
+
+section#cta button, button {
+    background-color: #ff9800; 
+    color: white;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em; 
+    margin: 20px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+section#cta button:hover, button:hover {
+    background-color: #f57c00;
+    transform: translateY(-2px); 
+}
+
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+
+.popup-container {
+    display: block; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border: none;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.close-btn {
+    color: #888;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+}
+
+
+.popup-content h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+form input {
+    width: calc(100% - 24px); 
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #4CAF50;
+    font-size: 1.1em;
+    border-radius: 5px; 
+}
+
+form button:hover {
+    background-color: #45a049;
+    transform: none; /* Sem efeito de levantar no form */
+}
