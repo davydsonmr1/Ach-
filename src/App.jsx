@@ -76,12 +76,12 @@ function App() {
             <div className="grid-container">
                 <section id="problema">
                     <h2>Sua loja física está perdendo vendas online?</h2>
-                    <p>Você trabalha duro, atende bem, mas vê os clientes a comprar cada vez mais pela internet? Sente que a concorrência dos grandes sites está a apertar e que é difícil competir online? Muitos clientes adorariam comprar de si pela internet, mas não encontram a sua loja lá. Não deixe as suas vendas escaparem!</p>
+                    <p>Você trabalha duro, atende bem, mas vê os clientes a comprar cada vez mais pela internet? Sente que a concorrência dos grandes sites está a apertar e que é difícil competir online? Muitos clientes adorariam comprar de você pela internet, mas não encontram a sua loja lá. Não deixe as suas vendas escaparem!</p>
                 </section>
 
                 <section id="solucao">
                     <h2>Nós Trazemos a Sua Loja para o Mundo Digital!</h2>
-                    <p>Chegou a <strong>{startupName}</strong>! A plataforma de vendas online feita <em>exclusivamente</em> para o comércio da nossa cidade. Nós criamos a sua loja online, mostramos os seus produtos e conectamo-lo diretamente aos clientes que querem comprar localmente, com a confiança e a agilidade que só você pode oferecer.</p>
+                    <p>Chegou a <strong>{startupName}</strong>! A plataforma de vendas online feita <em>exclusivamente</em> para o comércio da nossa cidade. Nós criamos a sua loja online, mostramos os seus produtos e conectamos você diretamente aos clientes que querem comprar localmente, com a confiança e a agilidade que só você pode oferecer.</p>
                 </section>
 
                 <section id="como-funciona">
@@ -89,7 +89,7 @@ function App() {
                     <ol>
                         <li><strong>Conversa Rápida:</strong> Entendemos a sua loja e o que você precisa.</li>
                         <li><strong>Sua Vitrine Online:</strong> Criamos a sua página com os seus produtos e a sua marca.</li>
-                        <li><strong>Clientes Comprando:</strong> Você começa a receber pedidos e a interagir com os clientes (pelo site ou direto no WhatsApp!).</li>
+                        <li><strong>Clientes Comprando:</strong> Você começa a receber pedidos e a interagir com os clientes (pela plataforma ou direto no WhatsApp!).</li>
                         <li><strong>Suporte Sempre Perto:</strong> Estamos aqui na cidade para ajudar no que for preciso.</li>
                     </ol>
                 </section>
