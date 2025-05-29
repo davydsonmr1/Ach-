@@ -88,11 +88,11 @@ function App() {
                     <h2>O Que é o MVP?</h2>
                     <p>Nosso MVP (Produto Mínimo Viável) é a sua loja online personalizada, pronta para receber pedidos e interagir com os clientes. É uma solução simples, rápida e eficaz para você começar a vender online sem complicações.</p>
                     <div className="mvp-gallery">
-                        <img src="/public/1.png" alt="Começo" />
-                        <img src="/public/2.png" alt="Tela de login" />
-                        <img src="/public/3.png" alt="Tela inicial" />
-                        <img src="/public/4.png" alt="Tela de avaliação" />       
-                        <img src="/public/5.png" alt="Tela de produtosn" />
+                        <img src="/1.png" alt="Começo" />
+                        <img src="/2.png" alt="Tela de login" />
+                        <img src="/3.png" alt="Tela inicial" />
+                        <img src="/4.png" alt="Tela de avaliação" />       
+                        <img src="/5.png" alt="Tela de produtos" />
                     </div>
                 </section>
 
