@@ -126,6 +126,7 @@ footer {
 }
 
 
+
 .popup-container {
     display: block; 
     position: fixed;
@@ -224,4 +225,81 @@ form button {
 form button:hover {
     background-color: #45a049;
     transform: none; /* Sem efeito de levantar no form */
+}
+
+/* Estilos do Carrossel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px auto 0 auto;
+    max-width: 1100px;
+    min-height: 420px;
+}
+
+.carousel-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    gap: 32px;
+}
+
+.carousel-img {
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    object-fit: contain;
+    background: #f8f8f8;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+}
+
+.carousel-img.center {
+    width: 500px;
+    height: 380px;
+    z-index: 2;
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    opacity: 1;
+}
+
+.carousel-img.side {
+    width: 260px;
+    height: 200px;
+    z-index: 1;
+    opacity: 0.6;
+    filter: blur(0.5px);
+}
+
+.carousel-btn {
+    background: rgba(76,175,80,0.85);
+    border: none;
+    color: #fff;
+    font-size: 2.2em;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: background 0.2s;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn.left {
+    left: 0;
+}
+
+.carousel-btn.right {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background: #388e3c;
+    opacity: 1;
 }

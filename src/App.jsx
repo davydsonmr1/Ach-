@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './App.css'; 
 
@@ -50,6 +50,47 @@ function Popup({ show, onClose }) {
     );
 }
 
+function Carousel({ images, interval = 3000 }) {
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % images.length);
+        }, interval);
+        return () => clearInterval(timer);
+    }, [images.length, interval]);
+
+    const goToPrev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+    const goToNext = () => setCurrent((prev) => (prev + 1) % images.length);
+
+    // Mostra 3 imagens: anterior, atual, próxima
+    const getImageIndex = (offset) => (current + offset + images.length) % images.length;
+
+    return (
+        <div className="carousel">
+            <button className="carousel-btn left" onClick={goToPrev}>&lt;</button>
+            <div className="carousel-images">
+                <img
+                    src={images[getImageIndex(-1)].src}
+                    alt={images[getImageIndex(-1)].alt}
+                    className="carousel-img side"
+                />
+                <img
+                    src={images[getImageIndex(0)].src}
+                    alt={images[getImageIndex(0)].alt}
+                    className="carousel-img center"
+                />
+                <img
+                    src={images[getImageIndex(1)].src}
+                    alt={images[getImageIndex(1)].alt}
+                    className="carousel-img side"
+                />
+            </div>
+            <button className="carousel-btn right" onClick={goToNext}>&gt;</button>
+        </div>
+    );
+}
+
 
 function App() {
    
@@ -67,6 +108,15 @@ function App() {
 
     const startupName = "Achô!"; 
 
+    const mvpImages = [
+        { src: "/public/00 - Começo .png", alt: "Começo" },
+        { src: "/public/01 - Login.png", alt: "Login" },
+        { src: "/public/02 - Tela inicial .png", alt: "Tela inicial" },
+        { src: "/public/03 - Tela de Avaliação .png", alt: "Tela de Avaliação" },
+        { src: "/public/04 - Tela de produtos .png", alt: "Tela de produtos" },
+  
+    ];
+
     return (
         <div className="App">
             <header>
@@ -82,6 +132,12 @@ function App() {
                 <section id="solucao">
                     <h2>Nós Trazemos a Sua Loja para o Mundo Digital!</h2>
                     <p>Chegou a <strong>{startupName}</strong>! A plataforma de vendas online feita <em>exclusivamente</em> para o comércio da nossa cidade. Nós criamos a sua loja online, mostramos os seus produtos e conectamos você diretamente aos clientes que querem comprar localmente, com a confiança e a agilidade que só você pode oferecer.</p>
+                </section>
+
+                <section id="mvp">
+                    <h2>O Que é o MVP?</h2>
+                    <p>Nosso MVP (Produto Mínimo Viável) é a sua loja online personalizada, pronta para receber pedidos e interagir com os clientes. É uma solução simples, rápida e eficaz para você começar a vender online sem complicações.</p>
+                    <Carousel images={mvpImages} interval={3500} />
                 </section>
 
                 <section id="como-funciona">
