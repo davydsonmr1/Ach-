@@ -109,11 +109,11 @@ function App() {
     const startupName = "Achô!"; 
 
     const mvpImages = [
-        { src: "/public/00 - Começo .png", alt: "Começo" },
-        { src: "/public/01 - Login.png", alt: "Login" },
-        { src: "/public/02 - Tela inicial .png", alt: "Tela inicial" },
-        { src: "/public/03 - Tela de Avaliação .png", alt: "Tela de Avaliação" },
-        { src: "/public/04 - Tela de produtos .png", alt: "Tela de produtos" },
+        { src: "/src/assets/00 - Começo .png", alt: "Começo" },
+        { src: "/src/assets/01 - Login.png", alt: "Login" },
+        { src: "/src/assets/02 - Tela inicial .png", alt: "Tela inicial" },
+        { src: "/src/assets/03 - Tela de Avaliação .png", alt: "Tela de Avaliação" },
+        { src: "/src/assets/04 - Tela de produtos .png", alt: "Tela de produtos" },
   
     ];
 
