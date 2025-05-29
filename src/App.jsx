@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import './App.css'; 
 
 function Popup({ show, onClose }) {
+    const [state, handleSubmit] = useForm("xvgaedlq");
+
     if (!show) {
         return null;
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const nome = event.target.nome.value;
-        alert(`Obrigado, ${nome}! Entraremos em contato em breve.`);
-        console.log("Novo Contato:", {
-            nome: event.target.nome.value,
-            loja: event.target.loja.value,
-            email: event.target.email.value,
-            whatsapp: event.target.whatsapp.value,
-        });
-        event.target.reset();
-        onClose(); 
-    };
+    if (state.succeeded) {
+        return (
+            <div className="popup-container">
+                <div className="popup-content">
+                    <span className="close-btn" onClick={onClose}>&times;</span>
+                    <p>Obrigado! Entraremos em contato em breve.</p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="popup-container">
@@ -26,20 +26,24 @@ function Popup({ show, onClose }) {
                 <span className="close-btn" onClick={onClose}>&times;</span>
                 <h2>Entre em Contato!</h2>
                 <p>Preencha o formulário abaixo e entraremos em contato para explicar tudo!</p>
-                <form id="contactForm" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} method='POST' id="contactForm">
                     <label htmlFor="nome">Seu Nome:</label>
                     <input type="text" id="nome" name="nome" required />
+                    <ValidationError prefix="Nome" field="nome" errors={state.errors} />
 
                     <label htmlFor="loja">Nome da Loja:</label>
                     <input type="text" id="loja" name="loja" required />
+                    <ValidationError prefix="Loja" field="loja" errors={state.errors} />
 
                     <label htmlFor="email">Seu Email:</label>
                     <input type="email" id="email" name="email" required />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
 
                     <label htmlFor="whatsapp">Seu WhatsApp:</label>
                     <input type="tel" id="whatsapp" name="whatsapp" required />
+                    <ValidationError prefix="Whatsapp" field="whatsapp" errors={state.errors} />
 
-                    <button type="submit">Enviar Interesse</button>
+                    <button type="submit" disabled={state.submitting}>Enviar Interesse</button>
                 </form>
             </div>
         </div>
@@ -95,7 +99,7 @@ function App() {
                         <li>✅ <strong>Mais Visibilidade:</strong> Apareça para quem procura comprar na nossa cidade.</li>
                         <li>✅ <strong>Aumento nas Vendas:</strong> Não perca mais nenhum cliente por não estar online.</li>
                         <li>✅ <strong>Conexão Local:</strong> Fortaleça o seu laço com a comunidade.</li>
-                        <li>✅ <strong>Facilidade Total:</strong> Deixe a tecnologia connosco e foque no seu negócio.</li>
+                        <li>✅ <strong>Facilidade Total:</strong> Deixe a tecnologia conosco e foque no seu negócio.</li>
                         <li>✅ <strong>Entrega Ágil:</strong> Use a sua proximidade como vantagem competitiva.</li>
                     </ul>
                 </section>
